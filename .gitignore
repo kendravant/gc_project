@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+UCI_HAR_Dataset/
+.DS_Store
+tidydata1.txt
+tidydata2.txt
+gc_project.Rproj
