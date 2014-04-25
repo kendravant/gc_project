@@ -34,23 +34,23 @@ subject <- rbind(subjectTrain,subjectTest)
 rm(subjectTest, subjectTrain, yTest, yTrain, XTest, XTrain)
 
 # Select only the features which are either a mean or a standard deviation
-# Including meanFreq variables here because they feel like means
+# This includes mean(), std() and meanFreq()
 featuresWithMean <- grep("mean",features$featureName,fixed=TRUE)
 featuresWithStd <- grep("std()",features$featureName,fixed=TRUE)
 featuresToKeep <- sort(c(featuresWithMean,featuresWithStd))
 
 # Create a tidy names vector
-namesVector <- c("subject.id","activity", as.character(features$featureName[featuresToKeep]))
-namesVector <- gsub("([a-z])([A-Z])", "\\1.\\2", namesVector, perl = TRUE)
-namesVector <- gsub("-",".", namesVector, perl=TRUE)
-namesVector <- gsub(",",".", namesVector, perl=TRUE)
-namesVector <- gsub("()","", namesVector, fixed=TRUE)
-namesVector <- tolower(namesVector)
+namesVector1 <- c("subject.id","activity", as.character(features$featureName[featuresToKeep]))
+namesVector1 <- gsub("([a-z])([A-Z])", "\\1.\\2", namesVector1, perl = TRUE)
+namesVector1 <- gsub("-",".", namesVector1, perl=TRUE)
+namesVector1 <- gsub(",",".", namesVector1, perl=TRUE)
+namesVector1 <- gsub("()","", namesVector1, fixed=TRUE)
+namesVector1 <- tolower(namesVector1)
 
 # Create a dataset with the subject ID, the activity and the mean and standard deviation features 
-# and write it out to the file meanAndStandardDeviationFeatures.csv
+# and write it out to the file meanAndStandardDeviationFeatures.txt
 meanAndStandardDeviationFeatures <-  cbind(subject,y,X[,featuresToKeep])
-names(meanAndStandardDeviationFeatures) <- namesVector
+names(meanAndStandardDeviationFeatures) <- namesVector1
 meanAndStandardDeviationFeatures <- arrange(meanAndStandardDeviationFeatures, 
                                             meanAndStandardDeviationFeatures$subject.id)
 write.csv(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.csv",row.names=FALSE)
@@ -58,11 +58,11 @@ write.table(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.t
 
 
 # Create a tidy names vector
-namesVector2 <- paste("average(",namesVector,")",sep="")
+namesVector2 <- paste("average(",namesVector1,")",sep="")
 namesVector2[1:2] <- c("subject.id","activity")
 
 # Create a dataset of the average for each feature by activity and by subject
-# and write it out to the file featureAveragebySubjectAndActivity.csv
+# and write it out to the file featureAveragebySubjectAndActivity.txt
 meltedData <- melt(meanAndStandardDeviationFeatures, id = c("subject.id","activity"))
 averagesTable <-dcast(meltedData, subject.id + activity ~ variable, mean)
 names(averagesTable) <- namesVector2
