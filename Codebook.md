@@ -1,4 +1,4 @@
-#Codebook for Getting and Cleaning Project, April 2014#
+## Codebook for Getting and Cleaning Project, April 2014 ##
 ========================================================
 
 Raw data (from the UCI Machine Learning Repository, Dataset: Human Activity Recognition Using Smartphones)
@@ -22,8 +22,8 @@ Tidy data
 	activityAveragebySubject.csv
 
 
-## Study Design ##
-==================
+### Study Design ###
+--------------------
 
 From the UCI_HAR dataset features_info.txt we have a general introduction to the origins of the data:
 
@@ -45,8 +45,8 @@ From the UCI_HAR dataset features_info.txt we have a general introduction to the
 
 
 
-## meanAndStandardDeviationActivities ##
-========================================
+### meanAndStandardDeviationActivities ###
+------------------------------------------
 10,299 observations of 79 variables: 46 means and 33 standard deviations
 
 This dataset contains only the features which are either a mean or a standard deviation.
@@ -55,7 +55,7 @@ This dataset contains only the features which are either a mean or a standard de
 	mean.freq is the weighted average of the frequency components
 
 
-###Variables list###
+####Variables list####
 
 	subject.id 							Identifier of the person performing the activity
 	activity  							Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
@@ -140,13 +140,13 @@ This dataset contains only the features which are either a mean or a standard de
 	f.body.body.gyro.jerk.mag.mean.freq
 
 
-## activityAveragebySubject ##
-====================================
+### activityAveragebySubject ###
+--------------------------------
 180 observations of 79 variables
 
 Each observation is the average of each variable for a given subject and activity
 
-###Variables list###
+####Variables list####
 
 	subject.id 							Identifier of the person performing the activity
 	activity  							Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
