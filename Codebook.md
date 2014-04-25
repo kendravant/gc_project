@@ -144,7 +144,7 @@ This dataset contains only the features which are either a mean or a standard de
 --------------------------------
 180 observations of 79 variables
 
-Each observation is the average of each variable for a given subject and activity
+Each observation is the average of the variable for a given subject and activity
 
 ####Variables list####
 
