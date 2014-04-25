@@ -5,8 +5,7 @@
 
 # Load required libraries
 library(plyr)
-library(reshape)
-library(stringr)
+library(reshape2)
 
 # Read in the data
 XTest <- read.table("UCI_HAR_Dataset//test//X_test.txt", nrows = 2950, comment.char = "", colClasses = c("numeric"))
@@ -55,13 +54,17 @@ names(meanAndStandardDeviationFeatures) <- namesVector
 meanAndStandardDeviationFeatures <- arrange(meanAndStandardDeviationFeatures, 
                                             meanAndStandardDeviationFeatures$subject.id)
 write.csv(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.csv",row.names=FALSE)
+write.table(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.txt",row.names=FALSE)
 
+
+# Create a tidy names vector
+namesVector2 <- paste("average(",namesVector,")",sep="")
+namesVector2[1:2] <- c("subject.id","activity")
 
 # Create a dataset of the average for each feature by activity and by subject
 # and write it out to the file featureAveragebySubjectAndActivity.csv
 meltedData <- melt(meanAndStandardDeviationFeatures, id = c("subject.id","activity"))
-averagesTable <-cast(meltedData, subject.id + activity ~ variable, mean)
+averagesTable <-dcast(meltedData, subject.id + activity ~ variable, mean)
+names(averagesTable) <- namesVector2
 write.csv(averagesTable,"featureAveragebySubjectAndActivity.csv",row.names=FALSE)
-
-
-
+write.table(averagesTable,"featureAveragebySubjectAndActivity.txt",row.names=FALSE)

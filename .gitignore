@@ -5,5 +5,9 @@ UCI_HAR_Dataset/
 .DS_Store
 meanAndStandardDeviationFeatures.csv
 featureAveragebySubjectAndActivity.csv
+meanAndStandardDeviationFeatures.txt
+featureAveragebySubjectAndActivity.txt
 gc_project.Rproj
 scraps.R
+namesVector.csv
+namesVector2.csv
