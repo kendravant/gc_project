@@ -3,6 +3,7 @@
 .RData
 UCI_HAR_Dataset/
 .DS_Store
-meanAndStandardDeviationFeatures.txt
-featureAveragebySubjectAndActivity.txt
+meanAndStandardDeviationFeatures.csv
+featureAveragebySubjectAndActivity.csv
 gc_project.Rproj
+scraps.R
