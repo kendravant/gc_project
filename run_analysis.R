@@ -42,13 +42,15 @@ XSelectedFeatures <- X[,featuresToKeep]
 
 # Create a dataset with the subject ID, the activity and the mean and standard deviation features
 # and write this out to the file meanAndStandardDeviationActivities.txt
-meanAndStandardDeviationActivities <-  cbind(subject,y,XSelectedFeatures)
-names(meanAndStandardDeviationActivities) <- c("subjectID","activity", as.character(features$featureName[featuresToKeep]))
-write.table(meanAndStandardDeviationActivities,"meanAndStandardDeviationActivities.txt",row.names=FALSE)
+meanAndStandardDeviationFeatures <-  cbind(subject,y,XSelectedFeatures)
+names(meanAndStandardDeviationFeatures) <- c("subjectID","activity", as.character(features$featureName[featuresToKeep]))
+write.table(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.txt",row.names=FALSE)
 
 
 # Create a dataset of the average for each feature by activity and by subject
-meltedData <- melt(meanAndStandardDeviationActivities, id = c("subjectID","activity"))
+allFeatures = cbind(subject,y,X)
+names(allFeatures) <- c("subjectID","activity", as.character(features$featureName))
+meltedData <- melt(allFeatures, id = c("subjectID","activity"))
 averagesTable <-cast(meltedData, subjectID + activity ~ variable, mean)
 averagesTable$subjectID <- as.numeric(averagesTable$subjectID)
 averagesTable <- arrange(averagesTable, averagesTable$subjectID)
@@ -59,5 +61,6 @@ newNames[1] <- c("subjectID")
 newNames[2] <- c("activity")
 names(averagesTable) <- newNames
 
-# Writing out the dataset with activity averages per subject
-write.table(averagesTable,"activityAveragebySubject.txt",row.names=FALSE)
+# Write out the dataset with activity averages per subject per activity 
+# to the file featureAveragebySubjectAndActivity.txt
+write.table(averagesTable,"featureAveragebySubjectAndActivity.txt",row.names=FALSE)

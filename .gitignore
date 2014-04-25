@@ -3,6 +3,6 @@
 .RData
 UCI_HAR_Dataset/
 .DS_Store
-tidydata1.txt
-tidydata2.txt
+meanAndStandardDeviationFeatures.txt
+featureAveragebySubjectAndActivity.txt
 gc_project.Rproj
