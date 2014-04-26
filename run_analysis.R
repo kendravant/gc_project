@@ -20,7 +20,7 @@ activities <- read.table("UCI_HAR_Dataset//activity_labels.txt",stringsAsFactor=
 names(features) <- c("colNumber","featureName")
 names(activities) <- c("activityID","activityName")
 
-# Combine the training and test data and remove intermediate variables
+# Combine the training and test data set and translate the y values from codes to activity names 
 X <- rbind(XTrain,XTest)
 y <- rbind(yTrain,yTest) 
 y <- revalue(y$V1, c("1"=activities$activityName[1], 
@@ -30,15 +30,15 @@ y <- revalue(y$V1, c("1"=activities$activityName[1],
                      "5"=activities$activityName[5],
                      "6"=activities$activityName[6]))
 subject <- rbind(subjectTrain,subjectTest)
+
+# Remove intermediate variables
 rm(subjectTest, subjectTrain, yTest, yTrain, XTest, XTrain)
 
 # Select only the features which are either a mean or a standard deviation
 # This includes mean(), std() and meanFreq()
-featuresWithMean <- grep("mean",features$featureName)
-featuresWithStd <- grep("std()",features$featureName,fixed=TRUE)
-featuresToKeep <- sort(c(featuresWithMean,featuresWithStd))
+featuresToKeep <- grep("mean|std()",features$featureName)
 
-# Create a tidy names vector
+# Create a tidy names vector (note that the order of the statements in the below matters!)
 namesVector1 <- c("subject.id","activity", as.character(features$featureName[featuresToKeep]))
 namesVector1 <- gsub("([a-z])([A-Z])", "\\1.\\2", namesVector1, perl = TRUE)
 namesVector1 <- gsub("-",".", namesVector1, perl=TRUE)

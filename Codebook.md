@@ -1,5 +1,5 @@
-## Codebook for Getting and Cleaning Project, April 2014 ##
-========================================================
+Codebook for Getting and Cleaning Project, April 2014
+=====================================================
 
 Raw data (from the UCI Machine Learning Repository, Dataset: Human Activity Recognition Using Smartphones)
 
@@ -20,6 +20,8 @@ Tidy data
 
 * meanAndStandardDeviationActivities.csv
 * activityAveragebySubject.csv
+
+The raw data is not expected to change but for completeness, the raw datasets used in this analysis was download on 16 April 2014
 
 
 ### Study Design ###
