@@ -50,9 +50,9 @@ From the UCI_HAR dataset features_info.txt we have a general introduction to the
 10,299 observations of 79 variables: 46 means and 33 standard deviations
 
 This dataset contains only the features which are either a mean or a standard deviation.
-	mean is the mean value
-	std is the standard deviation
-	mean.freq is the weighted average of the frequency components
+	* mean is the mean value
+	* std is the standard deviation
+	* mean.freq is the weighted average of the frequency components
 
 
 ####Variables list####
