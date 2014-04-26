@@ -66,6 +66,7 @@ This dataset contains only the features which are either a mean or a standard de
 * mean is the mean value
 * std is the standard deviation
 * mean.freq is the weighted average of the frequency components
+
 All features are numeric.
 
 
@@ -156,7 +157,7 @@ All features are numeric.
 
 ### activityAveragebySubject ###
 --------------------------------
-180 observations of 79 variables
+180 observations of 79 variables: 46 mean (including mean and mean frequency) features and 33 standard deviation features
 
 Each observation contains the average of the selected features for a given subject and activity. All variables denoted average() are numeric.
 
