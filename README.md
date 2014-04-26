@@ -1,7 +1,7 @@
 README
 ========================================================
 
-This repository contains the data munging code required to create a normalised feature set for mean, std and meanFreq features from the UCI_HAR dataset.
+This repository contains the data munging code required to create a normalised feature set for mean, standard deviation and mean frequency features from the UCI_HAR dataset.
 
 The file run_analysis.R reads in the datasets:
 
@@ -23,7 +23,7 @@ and creates standardised variable names using the word.word.word convention
 
 Two data sets are created and written out to file
 
-**meanAndStandardDeviationFeatures.csv** which contains only the features containing mean and standard deviation measurements along with the subject ID and activity
+**meanAndStandardDeviationFeatures.csv** which contains only the features containing mean, mean frequency and standard deviation measurements along with the subject ID and activity
 	
 **featureAveragebySubjectAndActivity.csv** which contains the average for each selected feature by subject ID and activity
 

@@ -34,7 +34,7 @@ rm(subjectTest, subjectTrain, yTest, yTrain, XTest, XTrain)
 
 # Select only the features which are either a mean or a standard deviation
 # This includes mean(), std() and meanFreq()
-featuresWithMean <- grep("mean",features$featureName,fixed=TRUE)
+featuresWithMean <- grep("mean",features$featureName)
 featuresWithStd <- grep("std()",features$featureName,fixed=TRUE)
 featuresToKeep <- sort(c(featuresWithMean,featuresWithStd))
 
@@ -42,7 +42,6 @@ featuresToKeep <- sort(c(featuresWithMean,featuresWithStd))
 namesVector1 <- c("subject.id","activity", as.character(features$featureName[featuresToKeep]))
 namesVector1 <- gsub("([a-z])([A-Z])", "\\1.\\2", namesVector1, perl = TRUE)
 namesVector1 <- gsub("-",".", namesVector1, perl=TRUE)
-namesVector1 <- gsub(",",".", namesVector1, perl=TRUE)
 namesVector1 <- gsub("()","", namesVector1, fixed=TRUE)
 namesVector1 <- tolower(namesVector1)
 

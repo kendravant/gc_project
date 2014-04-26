@@ -48,7 +48,7 @@ All units are assumed to be standard SI units.
 
 ### meanAndStandardDeviationActivities ###
 ------------------------------------------
-10,299 observations of 79 variables: 46 means and 33 standard deviations
+10,299 observations of 79 variables: 46 mean features and 33 standard deviation features
 
 This dataset contains only the features which are either a mean or a standard deviation.
 * mean is the mean value
