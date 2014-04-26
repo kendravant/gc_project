@@ -57,8 +57,8 @@ This dataset contains only the features which are either a mean or a standard de
 
 ####Variables list####
 
-    subject.id    Identifier of the person performing the activity
-    activity    Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+    subject.id               Identifier of the person performing the activity
+    activity                 Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
     t.body.acc.mean.x
     t.body.acc.mean.y
     t.body.acc.mean.z
@@ -148,8 +148,8 @@ Each observation is the average of the variable for a given subject and activity
 
 ####Variables list####
 
-    subject.id    Identifier of the person performing the activity
-    activity    Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+    subject.id                    Identifier of the person performing the activity
+    activity                      Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
     average(t.body.acc.mean.x)
     average(t.body.acc.mean.y)
     average(t.body.acc.mean.z)
