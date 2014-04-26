@@ -48,6 +48,12 @@ These signals were used to estimate variables of the feature vector for each pat
 All units are assumed to be standard SI units.
 
 
+### Transformations ###
+-----------------------
+
+Only features representing a mean, mean frequency or standard deviation are retained from the original feature list. To faciliate normalisation of the selected features, the average feature value by activity and subject is also calculated by aggregating by activity and subject.
+
+
 ### meanAndStandardDeviationActivities ###
 ------------------------------------------
 10,299 observations of 79 variables: 46 mean (including mean and mean frequency) features and 33 standard deviation features

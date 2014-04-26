@@ -27,8 +27,15 @@ Two data sets are created and written out to file
 	
 **featureAveragebySubjectAndActivity.csv** which contains the average for each selected feature by subject ID and activity
 
+The averages can be used to normalise the mean and standard deviation features, creating a clean set for training a classification algorithm.
 
-Required libraries (loaded by run_analysis.R): 
+
+To execute the script in your own workspace type
+
+	> source("run_analysis.R")
+
+
+The following required libraries are automatically loaded when the script is executed: 
 
 * reshape2
 * plyr
