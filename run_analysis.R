@@ -1,5 +1,4 @@
-# Creates two tidy datasets containing both test and training data for 
-# Samsung Galaxy S accelerometer data 
+# Creates two tidy datasets containing both test and training data for Samsung Galaxy S accelerometer data 
 # Set 1 (meanAndStandardDeviationFeatures.txt) contains only the mean and standard deviation features
 # Set 2 (featureAveragebySubjectAndActivity.txt) contains the average for each selected feature by subject and activity
 
@@ -55,7 +54,6 @@ meanAndStandardDeviationFeatures <- arrange(meanAndStandardDeviationFeatures,
                                             meanAndStandardDeviationFeatures$subject.id)
 write.csv(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.csv",row.names=FALSE)
 write.table(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.txt",row.names=FALSE)
-
 
 # Create a tidy names vector
 namesVector2 <- paste("average(",namesVector1,")",sep="")

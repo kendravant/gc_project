@@ -5,7 +5,7 @@ This repository contains the data munging code required to create a normalised f
 
 The file run_analysis.R reads in the datasets:
 
-*X _test.txt
+* X _test.txt
 * X_train.txt
 * y_text.txt
 * t_train.txt
