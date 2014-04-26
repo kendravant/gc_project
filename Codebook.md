@@ -47,11 +47,15 @@ These signals were used to estimate variables of the feature vector for each pat
 
 All units are assumed to be standard SI units.
 
+Please refer to [the dataset page](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#) on the UCI Machine Learning Repository for further details about the raw data.
+
 
 ### Transformations ###
 -----------------------
 
-Only features representing a mean, mean frequency or standard deviation are retained from the original feature list. To faciliate normalisation of the selected features, the average feature value by activity and subject is also calculated by aggregating by activity and subject.
+Only features representing a mean, mean frequency or standard deviation are retained from the original feature list. 
+
+To faciliate normalisation of the selected features, the average feature value by activity and subject is also calculated by aggregating by activity and subject.
 
 
 ### meanAndStandardDeviationActivities ###
@@ -62,12 +66,13 @@ This dataset contains only the features which are either a mean or a standard de
 * mean is the mean value
 * std is the standard deviation
 * mean.freq is the weighted average of the frequency components
+All features are numeric.
 
 
 ####Variables list####
 
-    subject.id               Identifier of the person performing the activity
-    activity                 Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+    subject.id               Identifier of the person performing the activity (Categorical: 1 -> 30)
+    activity                 Activity (Categorical: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
     t.body.acc.mean.x
     t.body.acc.mean.y
     t.body.acc.mean.z
@@ -153,12 +158,12 @@ This dataset contains only the features which are either a mean or a standard de
 --------------------------------
 180 observations of 79 variables
 
-Each observation contains the average of the features for a given subject and activity
+Each observation contains the average of the selected features for a given subject and activity. All variables denoted average() are numeric.
 
 ####Variables list####
 
-    subject.id                    Identifier of the person performing the activity
-    activity                      Activity (one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+    subject.id                    Identifier of the person performing the activity (Categorical: 1 -> 30)
+    activity                      Activity (Categorical: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
     average(t.body.acc.mean.x)
     average(t.body.acc.mean.y)
     average(t.body.acc.mean.z)

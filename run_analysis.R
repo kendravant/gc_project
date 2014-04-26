@@ -51,7 +51,6 @@ meanAndStandardDeviationFeatures <-  cbind(subject,y,X[,featuresToKeep])
 names(meanAndStandardDeviationFeatures) <- namesVector1
 meanAndStandardDeviationFeatures <- arrange(meanAndStandardDeviationFeatures, 
                                             meanAndStandardDeviationFeatures$subject.id)
-write.csv(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.csv",row.names=FALSE)
 write.table(meanAndStandardDeviationFeatures,"meanAndStandardDeviationFeatures.txt",row.names=FALSE)
 
 # Create a tidy names vector
@@ -63,5 +62,4 @@ namesVector2[1:2] <- c("subject.id","activity")
 meltedData <- melt(meanAndStandardDeviationFeatures, id = c("subject.id","activity"))
 averagesTable <-dcast(meltedData, subject.id + activity ~ variable, mean)
 names(averagesTable) <- namesVector2
-write.csv(averagesTable,"featureAveragebySubjectAndActivity.csv",row.names=FALSE)
 write.table(averagesTable,"featureAveragebySubjectAndActivity.txt",row.names=FALSE)
